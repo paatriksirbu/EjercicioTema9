@@ -12,6 +12,9 @@ public abstract class Mesa implements InterfazMesa {
 
     public Mesa(int numeroMesa, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva) {
         this.numeroMesa = numeroMesa;
+        if (!ubicacion.equals("interior") && !ubicacion.equals("jardin") && !ubicacion.equals("calle")) {
+            throw new IllegalArgumentException("Las vistas elegibles son interior, jardin o calle");
+        }
         this.ubicacion = ubicacion;
         this.precioReserva = precioReserva;
         this.fechaUltimaReserva = fechaUltimaReserva;

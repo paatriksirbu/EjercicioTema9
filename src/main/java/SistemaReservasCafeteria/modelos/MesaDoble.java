@@ -8,12 +8,8 @@ public class MesaDoble extends Mesa {
     private int capacidad = 2;
 
 
-    public MesaDoble(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, String vista, int capacidad) {
+    public MesaDoble(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva,int capacidad) {
         super(numero, ubicacion, precioReserva, fechaUltimaReserva);
-        if (!vista.equals("interior") && !vista.equals("jardin") && !vista.equals("calle")) {
-            throw new IllegalArgumentException("Las vistas elegibles son interior, jardin o calle");
-        }
-        this.vista = vista;
         this.capacidad = capacidad;
     }
 

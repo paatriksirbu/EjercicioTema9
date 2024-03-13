@@ -7,9 +7,9 @@ public class MesaFactory {
     public Mesa crearMesa(String tipo, int numero, String ubicacion, String vista, int capacidad, double precioReserva, LocalDate fechaUltimaReserva) {
         switch (tipo) {
             case "individual":
-                return new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, vista, capacidad);
+                return new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad);
             case "doble":
-                return new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, vista, capacidad);
+                return new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad);
             case "grupal":
                 return new MesaGrupal(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad, capacidad);
             default:
