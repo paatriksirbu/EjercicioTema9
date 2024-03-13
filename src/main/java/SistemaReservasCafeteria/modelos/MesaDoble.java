@@ -1,4 +1,4 @@
 package SistemaReservasCafeteria.modelos;
 
-public class MesaDoble {
+public class MesaDoble  {
 }
