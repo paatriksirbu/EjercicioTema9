@@ -12,7 +12,7 @@ public class GestorMesas {
     }
 
     public void eliminarMesa(int numeroMesa){
-        mesas.removeIf(mesa -> mesa.getNumero() == numeroMesa);
+        mesas.removeIf(mesa -> mesa.getNumeroMesa() == numeroMesa);
     }
 
     public void mostrarMesas(){

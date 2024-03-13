@@ -5,20 +5,20 @@ import SistemaReservasCafeteria.Interfaces.InterfazMesa;
 import java.time.LocalDate;
 
 public abstract class Mesa implements InterfazMesa {
-    private int numero;
+    private int numeroMesa;
     private String ubicacion;
     private double precioReserva;
     private LocalDate fechaUltimaReserva;
 
-    public Mesa(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva) {
-        this.numero = numero;
+    public Mesa(int numeroMesa, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva) {
+        this.numeroMesa = numeroMesa;
         this.ubicacion = ubicacion;
         this.precioReserva = precioReserva;
         this.fechaUltimaReserva = fechaUltimaReserva;
     }
 
-    public int getNumero() {
-        return numero;
+    public int getNumeroMesa() {
+        return numeroMesa;
     }
 
     public String getUbicacion() {
@@ -34,6 +34,6 @@ public abstract class Mesa implements InterfazMesa {
     }
 
     public String mostrarInformacion() {
-        return "Numero: " + numero + "\nUbicacion: " + ubicacion + "\nPrecio Reserva: " + precioReserva + "\nFecha Ultima Reserva: " + fechaUltimaReserva;
+        return "Numero: " + numeroMesa + "\nUbicacion: " + ubicacion + "\nPrecio Reserva: " + precioReserva + "\nFecha Ultima Reserva: " + fechaUltimaReserva;
     }
 }
