@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class MesaIndividual extends Mesa{
     private int capacidad = 1;
-
+    double precioReserva = 2.5;
 
     public MesaIndividual(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, int capacidad) {
         super(numero, ubicacion, precioReserva, fechaUltimaReserva);
@@ -22,5 +22,7 @@ public class MesaIndividual extends Mesa{
         return super.mostrarInformacion();
     }
 
-
+    public double calcularPrecioReserva(int duracion){
+        return duracion * precioReserva;
+    }
 }
