@@ -9,6 +9,7 @@ public abstract class Mesa implements InterfazMesa {
     private String ubicacion;
     private double precioReserva;
     private LocalDate fechaUltimaReserva;
+    private int capacidad;
 
     public Mesa(int numeroMesa, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva) {
         this.numeroMesa = numeroMesa;
@@ -18,6 +19,7 @@ public abstract class Mesa implements InterfazMesa {
         this.ubicacion = ubicacion;
         this.precioReserva = precioReserva;
         this.fechaUltimaReserva = fechaUltimaReserva;
+        this.capacidad = capacidad;
     }
 
     public int getNumeroMesa() {
@@ -37,6 +39,6 @@ public abstract class Mesa implements InterfazMesa {
     }
 
     public String mostrarInformacion() {
-        return "Numero: " + numeroMesa + "\nUbicacion: " + ubicacion + "\nPrecio Reserva: " + precioReserva + "\nFecha Ultima Reserva: " + fechaUltimaReserva;
+        return "Numero: " + numeroMesa + "\nUbicacion: " + ubicacion + "\nPrecio Reserva: " + precioReserva + "\nFecha Ultima Reserva: " + fechaUltimaReserva + "\nCapacidad: " + capacidad;
     }
 }

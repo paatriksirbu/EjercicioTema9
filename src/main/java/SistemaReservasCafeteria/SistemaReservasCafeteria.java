@@ -1,8 +1,7 @@
 package SistemaReservasCafeteria;
-import SistemaReservasCafeteria.modelos.Mesa;
 import java.time.LocalDate;
 import SistemaReservasCafeteria.Gestion.GestorMesas;
-import SistemaReservasCafeteria.modelos.MesaIndividual;
+import SistemaReservasCafeteria.modelos.*;
 
 import java.util.*;
 
@@ -35,14 +34,22 @@ public class SistemaReservasCafeteria {
                         System.out.println("Mesa individual");
                         MesaIndividual mesaIndividual = gestorMesas .crearMesaIndividual();
                         System.out.println("La mesa individual ha sido creada con exito.");
-                        System.out.println("\n  Detalles de la mesa: ");
+                        System.out.println("\n  Detalles de la mesa individual: ");
                         System.out.println(mesaIndividual.mostrarInformacion());
                         break;
                     case 2:
                         System.out.println("Mesa doble");
+                        MesaDoble mesaDoble = gestorMesas.crearMesaDoble();
+                        System.out.println("La mesa doble ha sido creada con exito.");
+                        System.out.println("\n  Detalles de la mesa doble: ");
+                        System.out.println(mesaDoble.mostrarInformacion());
                         break;
                     case 3:
                         System.out.println("Mesa grupal");
+                        MesaGrupal mesaGrupal = gestorMesas.crearMesaGrupal();
+                        System.out.println("La mesa grupal ha sido creada con exito.");
+                        System.out.println("\n  Detalles de la mesa grupal: ");
+                        System.out.println(mesaGrupal.mostrarInformacion());
                         break;
                     default:
                         System.out.println("Opcion no valida");

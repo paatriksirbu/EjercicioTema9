@@ -20,7 +20,7 @@ public class MesaGrupal extends Mesa {
 
     @Override
     public String mostrarInformacion() {
-        return super.mostrarInformacion() + "Cantidad de enchufes: " + cantidadEnchufes;
+        return super.mostrarInformacion() + "\nCantidad de enchufes: " + cantidadEnchufes;
     }
 
     public int getNumeroEnchufes() {    //Creamos un metodo para obtener un numero aleatorio de enchufes. (Algunas tienen mas que otras)
