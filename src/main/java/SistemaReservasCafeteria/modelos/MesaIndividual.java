@@ -5,12 +5,11 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MesaIndividual extends Mesa{
-    private int capacidad = 1;
     double precioReserva = 2.5;
 
-    public MesaIndividual(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, int capacidad, double duracion) {
+    public MesaIndividual(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, double duracion) {
         super(numero, ubicacion, precioReserva, fechaUltimaReserva, duracion);
-        this.capacidad = capacidad;
+        this.capacidad = 1;
     }
 
     @Override

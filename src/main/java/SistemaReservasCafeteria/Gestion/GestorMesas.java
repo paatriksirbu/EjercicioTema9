@@ -46,7 +46,7 @@ public class GestorMesas {
         int capacidad = 1;
         double precioReserva = 2.5;
 
-        MesaIndividual mesaIndividual = new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad, duracion);
+        MesaIndividual mesaIndividual = new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, duracion);
         agregarMesa(mesaIndividual);
         return mesaIndividual;
     }
@@ -60,13 +60,22 @@ public class GestorMesas {
         String ubicacion = scanner.nextLine();
         System.out.println("Introduzca la fecha de la ultima reserva: (formato YYYY-MM-DD)");
         LocalDate fechaUltimaReserva = LocalDate.parse(scanner.nextLine());
-        System.out.println("Introduzca la duracion de la reserva: ");
-        double duracion = scanner.nextDouble();
+        double duracion;
+        while(true){
+            System.out.println("Introduzca la duracion de la reserva: ");
+            if (scanner.hasNextDouble()) {
+                duracion = scanner.nextDouble();
+                break;
+            } else {
+                System.out.println("Por favor, introduzca un numero valido");
+                scanner.next();
+            }
+        }
+
 
         double precioReserva = 4.5;
-        int capacidad = 2;
 
-        MesaDoble mesaDoble = new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad, duracion);
+        MesaDoble mesaDoble = new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, duracion);
         agregarMesa(mesaDoble);
         return mesaDoble;
     }

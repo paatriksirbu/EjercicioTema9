@@ -5,7 +5,6 @@ import java.time.LocalDate;
 
 public class MesaGrupal extends Mesa {
     private int cantidadEnchufes;
-    private int capacidad;
 
     public MesaGrupal(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, int cantidadEnchufes, int capacidad, double duracion) {
         super(numero, ubicacion, precioReserva, fechaUltimaReserva, duracion);
