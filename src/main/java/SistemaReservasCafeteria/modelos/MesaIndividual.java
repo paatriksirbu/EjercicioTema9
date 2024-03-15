@@ -2,6 +2,7 @@ package SistemaReservasCafeteria.modelos;
 import SistemaReservasCafeteria.modelos.Mesa;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class MesaIndividual extends Mesa{
     private int capacidad = 1;
@@ -25,4 +26,6 @@ public class MesaIndividual extends Mesa{
     public double calcularPrecioReserva(int duracion){
         return duracion * precioReserva;
     }
+
+
 }
