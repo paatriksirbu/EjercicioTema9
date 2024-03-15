@@ -23,4 +23,7 @@ public class MesaGrupal extends Mesa {
         return super.mostrarInformacion() + "Cantidad de enchufes: " + cantidadEnchufes;
     }
 
+    public int getNumeroEnchufes() {    //Creamos un metodo para obtener un numero aleatorio de enchufes. (Algunas tienen mas que otras)
+        return (int) (Math.random() * 8) + 1;
+    }
 }
