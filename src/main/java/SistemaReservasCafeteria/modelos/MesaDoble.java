@@ -4,7 +4,6 @@ import SistemaReservasCafeteria.modelos.Mesa;
 import java.time.LocalDate;
 
 public class MesaDoble extends Mesa {
-    private String vista;
     private int capacidad = 2;
 
 
@@ -20,6 +19,6 @@ public class MesaDoble extends Mesa {
 
     @Override
     public String mostrarInformacion() {
-        return super.mostrarInformacion() + "Vista: " + vista;
+        return super.mostrarInformacion() ;
     }
 }
