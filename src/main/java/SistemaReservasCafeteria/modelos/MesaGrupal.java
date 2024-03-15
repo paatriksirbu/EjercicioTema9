@@ -7,15 +7,15 @@ public class MesaGrupal extends Mesa {
     private int cantidadEnchufes;
     private int capacidad;
 
-    public MesaGrupal(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, int cantidadEnchufes, int capacidad) {
-        super(numero, ubicacion, precioReserva, fechaUltimaReserva);
+    public MesaGrupal(int numero, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, int cantidadEnchufes, int capacidad, double duracion) {
+        super(numero, ubicacion, precioReserva, fechaUltimaReserva, duracion);
         this.cantidadEnchufes = cantidadEnchufes;
         this.capacidad = capacidad;
     }
 
     @Override
-    public double getPrecioReserva() {
-        return super.getPrecioReserva();
+    public double getPrecioReserva(double duracion) {
+        return super.getPrecioReserva(duracion);
     }
 
     @Override

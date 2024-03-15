@@ -9,6 +9,6 @@ public interface InterfazMesa {
     LocalDate getFechaUltimaReserva();
 
     //Metodos para gestionar las reservas de mesas
-    double getPrecioReserva();
+    double getPrecioReserva(double duracion);
     String mostrarInformacion();
 }

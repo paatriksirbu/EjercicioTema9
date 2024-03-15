@@ -40,11 +40,13 @@ public class GestorMesas {
         String ubicacion = scanner.nextLine();
         System.out.println("Introduzca la fecha de la ultima reserva: (formato YYYY-MM-DD)");
         LocalDate fechaUltimaReserva = LocalDate.parse(scanner.nextLine());
+        System.out.println("Introduzca la duracion de la reserva: ");
+        double duracion = scanner.nextDouble();
 
         int capacidad = 1;
         double precioReserva = 2.5;
 
-        MesaIndividual mesaIndividual = new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad);
+        MesaIndividual mesaIndividual = new MesaIndividual(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad, duracion);
         agregarMesa(mesaIndividual);
         return mesaIndividual;
     }
@@ -58,11 +60,13 @@ public class GestorMesas {
         String ubicacion = scanner.nextLine();
         System.out.println("Introduzca la fecha de la ultima reserva: (formato YYYY-MM-DD)");
         LocalDate fechaUltimaReserva = LocalDate.parse(scanner.nextLine());
+        System.out.println("Introduzca la duracion de la reserva: ");
+        double duracion = scanner.nextDouble();
 
         double precioReserva = 4.5;
         int capacidad = 2;
 
-        MesaDoble mesaDoble = new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad);
+        MesaDoble mesaDoble = new MesaDoble(numero, ubicacion, precioReserva, fechaUltimaReserva, capacidad, duracion);
         agregarMesa(mesaDoble);
         return mesaDoble;
     }
@@ -78,12 +82,14 @@ public class GestorMesas {
         LocalDate fechaUltimaReserva = LocalDate.parse(scanner.nextLine());
         System.out.println("Introduzca la capacidad de la mesa: ");
         int capacidad = scanner.nextInt();
+        System.out.println("Introduzca la duracion de la reserva: ");
+        double duracion = scanner.nextDouble();
 
 
         double precioReserva = 7.9;
         int cantidadEnchufes = (int) (Math.random() * 8) + 1;
 
-        MesaGrupal mesaGrupal = new MesaGrupal(numero, ubicacion, precioReserva, fechaUltimaReserva, cantidadEnchufes, capacidad);
+        MesaGrupal mesaGrupal = new MesaGrupal(numero, ubicacion, precioReserva, fechaUltimaReserva, cantidadEnchufes, capacidad, duracion);
         agregarMesa(mesaGrupal);
         return mesaGrupal;
     }

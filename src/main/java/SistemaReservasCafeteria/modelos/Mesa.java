@@ -10,8 +10,9 @@ public abstract class Mesa implements InterfazMesa {
     private double precioReserva;
     private LocalDate fechaUltimaReserva;
     private int capacidad;
+    private double duracion;
 
-    public Mesa(int numeroMesa, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva) {
+    public Mesa(int numeroMesa, String ubicacion, double precioReserva, LocalDate fechaUltimaReserva, double duracion) {
         this.numeroMesa = numeroMesa;
         if (!ubicacion.equals("interior") && !ubicacion.equals("jardin") && !ubicacion.equals("calle")) {
             throw new IllegalArgumentException("Las vistas elegibles son interior, jardin o calle");
@@ -20,6 +21,7 @@ public abstract class Mesa implements InterfazMesa {
         this.precioReserva = precioReserva;
         this.fechaUltimaReserva = fechaUltimaReserva;
         this.capacidad = capacidad;
+        this.duracion = duracion;
     }
 
     public int getNumeroMesa() {
@@ -30,12 +32,12 @@ public abstract class Mesa implements InterfazMesa {
         return ubicacion;
     }
 
-    public double getPrecioReserva() {
-        return precioReserva;
-    }
-
     public LocalDate getFechaUltimaReserva() {
         return fechaUltimaReserva;
+    }
+
+    public double getPrecioReserva(double duracion) {
+        return precioReserva * duracion;
     }
 
     public String mostrarInformacion() {
