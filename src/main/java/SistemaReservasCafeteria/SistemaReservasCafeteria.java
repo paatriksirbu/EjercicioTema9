@@ -27,12 +27,12 @@ public class SistemaReservasCafeteria {
                 System.out.println("Por favor, elija el tipo de mesa que quiere seleccionar: ");
                 System.out.println("1. Mesa individual - 2,50€/hora");
                 System.out.println("2. Mesa doble - 4,50€/hora");
-                System.out.println("3. Mesa grupal ' 7,90€/hora");
+                System.out.println("3. Mesa grupal - 7,90€/hora");
                 int tipoMesa = scanner.nextInt();
                 switch (tipoMesa) {
                     case 1:
                         System.out.println("Mesa individual");
-                        MesaIndividual mesaIndividual = gestorMesas .crearMesaIndividual();
+                        MesaIndividual mesaIndividual = gestorMesas.crearMesaIndividual();
                         System.out.println("La mesa individual ha sido creada con exito.");
                         System.out.println("\n  Detalles de la mesa individual: ");
                         System.out.println(mesaIndividual.mostrarInformacion());
