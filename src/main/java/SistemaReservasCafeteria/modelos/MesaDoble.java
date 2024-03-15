@@ -19,4 +19,5 @@ public class MesaDoble extends Mesa {
     public String mostrarInformacion() {
         return super.mostrarInformacion();
     }
+
 }

@@ -102,4 +102,12 @@ public class GestorMesas {
         agregarMesa(mesaGrupal);
         return mesaGrupal;
     }
+
+    public void mostrarMesasDisponibles() {
+        for (Mesa mesa : mesas) {
+            if (mesa.getFechaUltimaReserva().isBefore(LocalDate.now())) {
+                System.out.println(mesa.mostrarInformacion());
+            }
+        }
+    }
 }
