@@ -40,6 +40,6 @@ public abstract class Mesa implements InterfazMesa {
     }
 
     public String mostrarInformacion() {
-        return "Numero: " + numeroMesa + "\nUbicacion: " + ubicacion + "\nPrecio Reserva: " + String.format("%.2f", getPrecioReserva(duracion)) + " euros" + "\nFecha Ultima Reserva: " + getFechaUltimaReserva() + "\nCapacidad: " + capacidad;
+        return "Numero: " + numeroMesa + "\nVista: " + ubicacion + "\nPrecio Reserva: " + String.format("%.2f", getPrecioReserva(duracion)) + " euros" + "\nFecha Ultima Reserva: " + getFechaUltimaReserva() + "\nCapacidad: " + capacidad;
     }
 }
