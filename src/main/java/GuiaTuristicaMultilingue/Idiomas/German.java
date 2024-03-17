@@ -8,11 +8,16 @@ import java.util.Scanner;
 
 public class German implements Traduccion {
     Scanner sc = new Scanner(System.in);
+    private LugaresTuristicos lugaresTuristicos;
+
+    public German(LugaresTuristicos lugaresTuristicos) {
+        this.lugaresTuristicos = lugaresTuristicos;
+    }
 
     @Override
     public void introducirLugar() {
         System.out.println("Geben Sie den Ort ein, den Sie besuchen möchten: ");
-        LugaresTuristicos.mostrarLugares();
+        lugaresTuristicos.mostrarLugares();
 
         int seleccion = sc.nextInt();
         while (seleccion < 1 || seleccion > 5) {
@@ -20,7 +25,7 @@ public class German implements Traduccion {
             seleccion = sc.nextInt();
         }
 
-        System.out.println("Ort ausgewählt: " + LugaresTuristicos.getLugar(seleccion - 1));
+        System.out.println("Ort ausgewählt: " + lugaresTuristicos.getLugar(seleccion - 1));
         sc.nextLine();
     }
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class LugaresTuristicos {
 
-    private static List<String> lugares;
+    private List<String> lugares;
 
     public LugaresTuristicos(){
         this.lugares = new ArrayList<>();
@@ -15,14 +15,14 @@ public class LugaresTuristicos {
         lugares.add("La Mezquita, Córdoba");
     }
 
-    public static void mostrarLugares(){
+    public void mostrarLugares(){
         System.out.println("Los lugares turísticos disponibles son: ");
         for (String lugar : lugares) {
             System.out.println(lugar);
         }
     }
 
-    public static String getLugar(int index){
+    public  String getLugar(int index){
         return lugares.get(index);
     }
 
