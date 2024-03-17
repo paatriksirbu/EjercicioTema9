@@ -1,6 +1,7 @@
 package GuiaTuristicaMultilingue.Idiomas;
 
 import GuiaTuristicaMultilingue.Interfaces.Traduccion;
+import GuiaTuristicaMultilingue.LugaresTuristicos;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,6 +12,17 @@ public class Spanish implements Traduccion {
     @Override
     public void introducirLugar() {
         System.out.println("Introduce el lugar que deseas visitar: ");
+        LugaresTuristicos.mostrarLugares();
+
+        int seleccion = sc.nextInt();
+        while (seleccion < 1 || seleccion > 5) {
+            System.out.println("Opción no válida");
+            seleccion = sc.nextInt();
+        }
+
+        System.out.println("Lugar seleccionado: " + LugaresTuristicos.getLugar(seleccion - 1));
+        sc.nextLine();
+
     }
 
     @Override

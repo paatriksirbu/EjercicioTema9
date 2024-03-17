@@ -1,6 +1,7 @@
 package GuiaTuristicaMultilingue.Idiomas;
 
 import GuiaTuristicaMultilingue.Interfaces.Traduccion;
+import GuiaTuristicaMultilingue.LugaresTuristicos;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,6 +12,17 @@ public class Romanian implements Traduccion {
     @Override
     public void introducirLugar() {
         System.out.println("Introduceți locul pe care doriți să îl vizitați: ");
+        LugaresTuristicos.mostrarLugares();
+
+        int seleccion = sc.nextInt();
+        while (seleccion < 1 || seleccion > 5) {
+            System.out.println("Opțiune invalidă");
+            seleccion = sc.nextInt();
+        }
+
+        System.out.println("Locul ales: " + LugaresTuristicos.getLugar(seleccion - 1));
+        sc.nextLine();
+
     }
 
     @Override
