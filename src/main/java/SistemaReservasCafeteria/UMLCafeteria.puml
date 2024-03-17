@@ -1,0 +1,77 @@
+@startuml
+
+interface InterfazMesa {
+    +getNumeroMesa() : int
+    +getUbicacion() : String
+    +getFechaUltimaReserva() : LocalDate
+    +getPrecioReserva(duracion: double) : double
+    +mostrarInformacion() : String
+}
+
+class Mesa {
+    -numeroMesa : int
+    -ubicacion : String
+    -precioReserva : double
+    -fechaUltimaReserva : LocalDate
+    -capacidad : int
+    -duracion : double
+    +Mesa(numeroMesa : int, ubicacion : String, precioReserva : double, fechaUltimaReserva : LocalDate, duracion : double)
+    +getNumeroMesa() : int
+    +getUbicacion() : String
+    +getFechaUltimaReserva() : LocalDate
+    +getPrecioReserva(duracion: double) : double
+    +mostrarInformacion() : String
+}
+
+class MesaIndividual {
+    -precioReserva : double
+    +MesaIndividual(numero : int, ubicacion : String, precioReserva : double, fechaUltimaReserva : LocalDate, duracion : double)
+    +getPrecioReserva(duracion: double) : double
+    +mostrarInformacion() : String
+    +calcularPrecioReserva(duracion: int) : double
+}
+
+class MesaDoble {
+    +MesaDoble(numero : int, ubicacion : String, precioReserva : double, fechaUltimaReserva : LocalDate, duracion : double)
+    +getPrecioReserva(duracion: double) : double
+    +mostrarInformacion() : String
+}
+
+class MesaGrupal {
+    -cantidadEnchufes : int
+    +MesaGrupal(numero : int, ubicacion : String, precioReserva : double, fechaUltimaReserva : LocalDate, cantidadEnchufes : int, capacidad : int, duracion : double)
+    +getPrecioReserva(duracion: double) : double
+    +mostrarInformacion() : String
+    +getNumeroEnchufes() : int
+}
+
+class MesaFactory {
+    +crearMesa(tipo: String, numero: int, ubicacion: String, capacidad: int, precioReserva: double, fechaUltimaReserva: LocalDate, duracion: double, cantidadEnchufes: int) : Mesa
+}
+
+class GestorMesas {
+    -mesas : List<Mesa>
+    +GestorMesas(mesas : List<Mesa>)
+    +agregarMesa(mesa: Mesa) : void
+    +eliminarMesa(numeroMesa: int) : void
+    +mostrarMesas() : void
+    +crearMesaIndividual() : MesaIndividual
+    +crearMesaDoble() : MesaDoble
+    +crearMesaGrupal() : MesaGrupal
+    +mostrarMesasDisponibles() : void
+}
+
+class SistemaReservasCafeteria {
+    +main(args : String[]) : void
+}
+
+Mesa ..|> InterfazMesa
+MesaIndividual --|> Mesa
+MesaDoble --|> Mesa
+MesaGrupal --|> Mesa
+GestorMesas --> "0..*" Mesa
+MesaFactory ..> MesaIndividual : creates >
+MesaFactory ..> MesaDoble : creates >
+MesaFactory ..> MesaGrupal : creates >
+
+@enduml
