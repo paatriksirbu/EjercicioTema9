@@ -1,0 +1,84 @@
+@startuml
+
+interface Traduccion {
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class LugaresTuristicos {
+    -lugares : List<String>
+    +LugaresTuristicos()
+    +mostrarLugares() : void
+    +getLugar(index : int) : String
+    +numeroLugares() : int
+}
+
+class English implements Traduccion {
+    -sc : Scanner
+    -lugaresTuristicos : LugaresTuristicos
+    +English(lugaresTuristicos : LugaresTuristicos)
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class Spanish implements Traduccion {
+    -sc : Scanner
+    -lugaresTuristicos : LugaresTuristicos
+    +Spanish(lugaresTuristicos : LugaresTuristicos)
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class French implements Traduccion {
+    -sc : Scanner
+    -lugaresTuristicos : LugaresTuristicos
+    +French(lugaresTuristicos : LugaresTuristicos)
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class German implements Traduccion {
+    -sc : Scanner
+    -lugaresTuristicos : LugaresTuristicos
+    +German(lugaresTuristicos : LugaresTuristicos)
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class Romanian implements Traduccion {
+    -sc : Scanner
+    -lugaresTuristicos : LugaresTuristicos
+    +Romanian(lugaresTuristicos : LugaresTuristicos)
+    +introducirLugar() : void
+    +introducirHorario() : void
+    +inicioRespuesta() : void
+    +finRespuesta() : void
+}
+
+class GuiaTuristicaMultilingue {
+    +main(args : String[]) : void
+}
+
+English .down.> LugaresTuristicos
+Spanish .down.> LugaresTuristicos
+French .down.> LugaresTuristicos
+German .down.> LugaresTuristicos
+Romanian .down.> LugaresTuristicos
+
+English ..|> Traduccion
+Spanish ..|> Traduccion
+French ..|> Traduccion
+German ..|> Traduccion
+Romanian ..|> Traduccion
+
+@enduml
